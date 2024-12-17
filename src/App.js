@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "@fontsource/roboto";
+import "@fontsource-variable/roboto-mono";
+import '@fontsource-variable/lexend';
+import '@fontsource-variable/plus-jakarta-sans';
+import '@fontsource-variable/quicksand';
+// Supports only weight 400
+import '@fontsource-variable/roboto-flex';
+// Supports weights 100-900
+import '@fontsource-variable/outfit';
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import { theme } from "./utils/theme";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <CssBaseline />
+        <Routes>
+          <Route path="/" element={<Home />}>
+            {/*<Route path="send-message" element={<SendMessage />} />*/}
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
