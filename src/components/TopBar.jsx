@@ -7,6 +7,7 @@ import LogoBlack from "./assets/LogoBlack";
 import { theme } from "../utils/theme";
 import { Link as RouterLink } from "react-router-dom";
 import useDialog from "./hooks/useDialog";
+import RegisterButton from "./common/RegisterButton";
 
 const sections = [{ name: "Home" }, { name: "About us" }, { name: "Contact" }];
 export default function TopBar() {
@@ -40,7 +41,6 @@ export default function TopBar() {
           justifyContent="space-between"
           alignItems="center"
           px="1%"
-          py="0.5%"
         >
           <Grid2 container item height="fit-content" alignItems="center">
             <LogoBlack
@@ -58,6 +58,9 @@ export default function TopBar() {
             display={{ xs: "none", md: "flex" }}
             justifyContent="flex-end"
           >
+            <Grid2 item sx={{ paddingRight: "1rem" }}>
+              <RegisterButton />
+            </Grid2>
             {sections.map((section) => (
               <Grid2
                 item
@@ -75,7 +78,7 @@ export default function TopBar() {
                   sx={{
                     color:
                       clicked === section.name
-                        ? "rgba(250,250,250, 0.8)"
+                        ? "rgba(250,250,250, 0.9)"
                         : "rgba(150,150,150, 1)",
                   }}
                 >
@@ -86,48 +89,32 @@ export default function TopBar() {
           </Grid2>
         </Grid2>
         <Box sx={{ display: { xs: "flex", md: "none" } }}>
-          <Button variant="text" onClick={handleClickOpen}>
-            <MenuIcon sx={{ color: "secondary.main" }} />
-          </Button>
+          {open ? (
+            <Button variant="text" onClick={handleClose}>
+              <CloseIcon sx={{ color: "secondary.main", height: 60 }} />
+            </Button>
+          ) : (
+            <Button variant="text" onClick={handleClickOpen}>
+              <MenuIcon sx={{ color: "secondary.main" }} />
+            </Button>
+          )}
           <Dialog
-            fullScreen
             open={open}
             onClose={handleClose}
             PaperProps={{
               sx: {
                 border: "none",
+                width: "100%",
               },
             }}
           >
-            <Grid2
-              container
-              width="100%"
-              justifyContent="space-between"
-              alignItems="space-between"
-              px="4.5%"
-            >
-              <Grid2 item textAlign="center">
-                <LogoBlack
-                  sx={{
-                    height: "4rem",
-                    width: "4rem",
-                    padding: 0,
-                  }}
-                />
-              </Grid2>
-              <Grid2 item>
-                <Button variant="text" onClick={handleClose}>
-                  <CloseIcon sx={{ color: "secondary.main", height: 60 }} />
-                </Button>
-              </Grid2>
-            </Grid2>
-
             <Grid2
               container
               flexDirection="column"
               justifyContent="center"
               alignItems="center"
               height="100%"
+              mb="10%"
             >
               {sections.map((item) => (
                 <Grid2
@@ -141,7 +128,6 @@ export default function TopBar() {
                     underline="hover"
                     to={item.to}
                     component={RouterLink}
-                    fontSize={32}
                     onClick={() => setClicked(item.name)}
                     sx={{
                       color:
@@ -155,6 +141,7 @@ export default function TopBar() {
                 </Grid2>
               ))}
             </Grid2>
+            <RegisterButton fullWidth />
           </Dialog>
         </Box>
       </Toolbar>
