@@ -1,7 +1,7 @@
 import { Grid2, Grow, Typography } from "@mui/material";
-import Banner from "../assets/image.jpg";
+import Banner from "../../assets/image.jpg";
 import { useState, useEffect } from "react";
-import LogoWhiteLettersNoBackground from "./assets/LogoWhiteLettersNoBackground";
+import LogoWhiteLettersNoBackground from "../assets/LogoWhiteLettersNoBackground";
 
 const Hero = () => {
   const [transition, setTransition] = useState(false);

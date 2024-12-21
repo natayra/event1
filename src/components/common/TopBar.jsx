@@ -1,15 +1,18 @@
 import { AppBar, Toolbar, Grid2, Button, Dialog, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import LogoBlack from "./assets/LogoBlack";
-import { theme } from "../utils/theme";
+import LogoBlack from "../assets/LogoBlack";
+import { theme } from "../../utils/theme";
 import { Link as RouterLink } from "react-router-dom";
-import useDialog from "./hooks/useDialog";
-import RegisterButton from "./common/RegisterButton";
+import useDialog from "../hooks/useDialog";
+import RegisterButton from "./RegisterButton";
 
-const sections = [{ name: "Home" }, { name: "About us" }, { name: "Contact" }];
+const sections = [
+  { name: "Home", href: "/" },
+  { name: "About us" },
+  { name: "Contact" },
+];
 export default function TopBar() {
   const [clicked, setClicked] = useState("Home");
   const { open, handleClickOpen, handleClose } = useDialog();
@@ -72,9 +75,7 @@ export default function TopBar() {
                   variant="text"
                   fullWidth
                   disableRipple
-                  component={Link}
-                  to={section.to}
-                  onClick={() => setClicked(section.name)}
+                  href={section.href}
                   sx={{
                     color:
                       clicked === section.name

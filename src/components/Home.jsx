@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import TopBar from "./TopBar";
-import Hero from "./Hero";
+import TopBar from "./common/TopBar";
+import Hero from "./homeComponents/Hero";
 
 const Home = () => {
   return (
