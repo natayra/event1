@@ -14,6 +14,7 @@ import { CssBaseline } from "@mui/material";
 import { theme } from "./utils/theme";
 import Home from "./components/Home";
 import Register from "./components/Register";
+import Events from "./components/Events";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <CssBaseline />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/register/:id" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

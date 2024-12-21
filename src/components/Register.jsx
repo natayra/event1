@@ -10,15 +10,33 @@ import TopBar from "./common/TopBar";
 import { useForm } from "./hooks/useForm";
 import Label from "./common/Label";
 import { theme } from "../utils/theme";
+import { useLocation } from "react-router-dom";
 
 const Register = () => {
   const { form, success, sendEmail } = useForm();
-
+  const location = useLocation();
+  
   return (
     <Box>
       <TopBar />
       <form ref={form} onSubmit={sendEmail}>
-        <Grid2 container flexDirection="column" spacing={4}>
+        <Grid2
+          container
+          mt={{ xs: "5rem", md: "7rem" }}
+          sx={{
+            backgroundColor: theme.palette.grey[900],
+            border: "1px solid white",
+            padding: "2% 5%",
+            width: "fit-content",
+            cursor: "pointer",
+            "&:hover": {
+              backgroundColor: theme.palette.grey[800],
+              scale: "1.01",
+            },
+          }}
+          flexDirection="column"
+          spacing={4}
+        >
           <Grid2
             container
             item
@@ -28,11 +46,9 @@ const Register = () => {
             mb={-4}
           >
             <Grid2 item>
-              <Typography variant="h4" color="primary.main">
-                Message
-              </Typography>
+              <Typography variant="h4" color="primary.main"></Typography>
             </Grid2>
-            <Grid2 item textAlign="right"></Grid2>
+            , <Grid2 item textAlign="right">February 7, 2025 in Zurich </Grid2>
           </Grid2>
           <Grid2 container item xs={12} flexDirection="column" spacing={4}>
             <Grid2 container item xs={12} spacing={4}>

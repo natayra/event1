@@ -122,11 +122,9 @@ theme = createTheme(theme, {
     MuiCard: {
       styleOverrides: {
         root: {
-          border: `1px solid ${theme.palette.primary.main}`,
-          borderRadius: theme.shape.borderRadius,
-          padding: 40,
-          height: "100%",
+          backgroud: "pink",
           boxShadow: "none",
+          color: "black"
         },
       },
     },
