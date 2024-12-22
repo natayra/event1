@@ -14,7 +14,6 @@ import { useLocation } from "react-router-dom";
 
 const Register = () => {
   const { form, success, sendEmail } = useForm();
-  const location = useLocation();
   
   return (
     <Box>
