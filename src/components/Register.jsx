@@ -10,11 +10,10 @@ import TopBar from "./common/TopBar";
 import { useForm } from "./hooks/useForm";
 import Label from "./common/Label";
 import { theme } from "../utils/theme";
-import { useLocation } from "react-router-dom";
 
 const Register = () => {
   const { form, success, sendEmail } = useForm();
-  
+
   return (
     <Box>
       <TopBar />
@@ -23,15 +22,12 @@ const Register = () => {
           container
           mt={{ xs: "5rem", md: "7rem" }}
           sx={{
-            backgroundColor: theme.palette.grey[900],
-            border: "1px solid white",
-            padding: "2% 5%",
+            backgroundColor: theme.palette.primary.main,
+            border: "2px solid white",
+            borderColor: theme.palette.tertiary.main,
+            padding: "2%",
             width: "fit-content",
-            cursor: "pointer",
-            "&:hover": {
-              backgroundColor: theme.palette.grey[800],
-              scale: "1.01",
-            },
+            color: "white"
           }}
           flexDirection="column"
           spacing={4}
@@ -47,34 +43,20 @@ const Register = () => {
             <Grid2 item>
               <Typography variant="h4" color="primary.main"></Typography>
             </Grid2>
-            , <Grid2 item textAlign="right">February 7, 2025 in Zurich </Grid2>
+            <Grid2 item textAlign="right">
+              February 7, 2025 in Zurich
+            </Grid2>
           </Grid2>
-          <Grid2 container item xs={12} flexDirection="column" spacing={4}>
-            <Grid2 container item xs={12} spacing={4}>
-              <Grid2
-                container
-                item
-                flexDirection="column"
-                xs={5.95}
-                spacing={1}
-              >
-                <Grid2 item>
-                  <Label label="Name" />
-                </Grid2>
-                <Grid2 item>
-                  <InputBase type="text" name="user_name" required />
-                </Grid2>
+          <Grid2 container item flexDirection="column">
+            <Grid2 container item flexDirection="column">
+              <Grid2 item>
+                <Label label="Name" />
               </Grid2>
-              <Grid2 container item flexDirection="column" xs={6} spacing={1}>
-                <Grid2 item>
-                  <Label label="Email" />
-                </Grid2>
-                <Grid2 item>
-                  <InputBase type="email" name="user_email" required />
-                </Grid2>
+              <Grid2 item>
+                <InputBase type="text" name="user_name" required />
               </Grid2>
             </Grid2>
-            <Grid2 container item flexDirection="column" xs={12} spacing={1}>
+            <Grid2 container item flexDirection="column">
               <Grid2 item>
                 <Label label="Message" />
               </Grid2>
@@ -86,6 +68,14 @@ const Register = () => {
                   minRows={5}
                   maxRows={8}
                 />
+              </Grid2>
+            </Grid2>
+            <Grid2 container item flexDirection="column">
+              <Grid2 item>
+                <Label label="Email" />
+              </Grid2>
+              <Grid2 item>
+                <InputBase type="email" name="user_email" required />
               </Grid2>
             </Grid2>
           </Grid2>
@@ -120,7 +110,6 @@ const Register = () => {
                 value="Send"
                 disabled={success === "sending"}
                 fullWidth
-                sx={{ backgroundColor: "common.white" }}
               >
                 <Typography variant="h6" color="inherit">
                   {success === "sending" ? "Sending..." : "Send Message"}

@@ -9,13 +9,13 @@ const EventCard = ({ id, name, date, location, address, ageRange }) => {
       variant="container"
       href={`/register/${id}`}
       sx={{
-        backgroundColor: theme.palette.grey[900],
-        border: "1px solid white",
-        padding: "2% 5%",
+        backgroundColor: theme.palette.primary.main,
+        border: "2px solid white",
+        borderColor: theme.palette.tertiary.main,
+        padding: "2%",
         width: "fit-content",
         cursor: "pointer",
         "&:hover": {
-          backgroundColor: theme.palette.grey[800],
           scale: "1.01",
         },
       }}

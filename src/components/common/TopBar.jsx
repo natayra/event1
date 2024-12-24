@@ -27,9 +27,7 @@ export default function TopBar() {
   return (
     <AppBar
       position="fixed"
-      sx={{
-        border: "none",
-      }}
+   
     >
       <Toolbar
         sx={{

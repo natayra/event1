@@ -3,16 +3,16 @@ import { createTheme } from "@mui/material";
 let theme = createTheme({
   palette: {
     primary: {
-      main: "#000000",
+      main: "#050301",
     },
     secondary: {
       main: "rgba(250, 250, 250, 0.5)",
     },
     tertiary: {
-      main: "#FFFFFF",
+      main: "#A2FF00",
     },
     background: {
-      default: "#000000",
+      default: "#0C0908",
     },
   },
   shape: {
@@ -124,7 +124,7 @@ theme = createTheme(theme, {
         root: {
           backgroud: "pink",
           boxShadow: "none",
-          color: "black"
+          color: "black",
         },
       },
     },
@@ -132,7 +132,7 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: {
           boxShadow: "none",
-          borderBottom: `1px solid ${theme.palette.grey[400]}`,
+          borderBottom: `1px solid ${theme.palette.grey[900]}`,
           backgroundColor: "rgba(246, 246, 246, 0.5)",
           maxWidth: "100vw",
         },
@@ -156,19 +156,18 @@ theme = createTheme(theme, {
     MuiInputBase: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.secondary.light,
-          borderRadius: theme.shape.borderRadius,
-          paddingTop: 8,
-          paddingBottom: 8,
-          paddingRight: 10,
-          paddingLeft: 10,
-          width: "100%",
-          border: `1px solid ${theme.palette.grey[300]}`,
+          backgroundColor: theme.palette.primary.main,
+          border: "2px solid white",
+          borderColor: theme.palette.tertiary.main,
+          borderRadius: "0.F5rem",
+          padding: "2%",
+          width: "fit-content",
+          cursor: "pointer",
           "&:hover": {
-            backgroundColor: theme.palette.grey[300],
+            scale: "1.01",
           },
           "&.Mui-focused": {
-            backgroundColor: theme.palette.grey[300],
+            backgroundColor: theme.palette.grey[900],
           },
         },
       },
