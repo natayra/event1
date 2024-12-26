@@ -1,10 +1,17 @@
+import React, { useState } from "react";
+import { supabase } from "../supabase";
 import {
-  Box,
-  Typography,
+  TextField,
   Button,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  FormHelperText,
+  Typography,
   Grid2,
-  InputBase,
-  Alert,
+  Chip,
+  Box,
 } from "@mui/material";
 import TopBar from "./common/TopBar";
 import { useForm } from "./hooks/useForm";
@@ -14,119 +21,250 @@ import { theme } from "../utils/theme";
 const Register = () => {
   const { form, success, sendEmail } = useForm();
 
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone_number: "",
+    profile_picture: "",
+    pronouns: "",
+    sexual_orientation: "",
+    age_group: "",
+    interested_genders: [],
+    preferred_age_range: [],
+    qualities: [],
+    weekend_preference: "",
+    lottery_choice: "",
+    superpower_choice: "",
+    pet_preference: "",
+    party_vibe: "",
+    vacation_type: "",
+    partner_introversion: "",
+    activity_level: "",
+    fitness_importance: "",
+    future_children: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleArrayChange = (name, value) => {
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { error } = await supabase
+      .from("registrations") // Replace with your table name
+      .insert([formData]);
+
+    if (error) {
+      console.error("Error inserting data:", error.message);
+      alert("Failed to submit. Please try again.");
+    } else {
+      alert("Registration successful!");
+      setFormData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        profile_picture: "",
+        pronouns: "",
+        sexual_orientation: "",
+        age_group: "",
+        interested_genders: [],
+        preferred_age_range: [],
+        qualities: [],
+        weekend_preference: "",
+        lottery_choice: "",
+        superpower_choice: "",
+        pet_preference: "",
+        party_vibe: "",
+        vacation_type: "",
+        partner_introversion: "",
+        activity_level: "",
+        fitness_importance: "",
+        future_children: "",
+      });
+    }
+  };
   return (
     <Box>
       <TopBar />
       <form ref={form} onSubmit={sendEmail}>
         <Grid2
           container
-          mt={{ xs: "5rem", md: "7rem" }}
-          sx={{
-            backgroundColor: theme.palette.primary.main,
-            border: "2px solid white",
-            borderColor: theme.palette.tertiary.main,
-            padding: "2%",
-            width: "fit-content",
-            color: "white"
-          }}
+          width="30%"
           flexDirection="column"
-          spacing={4}
+          justifyContent="center"
+          rowGap="2rem"
+          mt="6rem"
+          ml="3%"
         >
-          <Grid2
-            container
-            item
-            xs={12}
-            justifyContent="space-between"
-            alignItems="center"
-            mb={-4}
-          >
-            <Grid2 item>
-              <Typography variant="h4" color="primary.main"></Typography>
-            </Grid2>
-            <Grid2 item textAlign="right">
-              February 7, 2025 in Zurich
-            </Grid2>
+          {/* First Name */}
+          <Grid2 item xs={12}>
+            <TextField
+              fullWidth
+              label="First Name"
+              name="first_name"
+              value={formData.first_name}
+              onChange={handleChange}
+              required
+            />
           </Grid2>
-          <Grid2 container item flexDirection="column">
-            <Grid2 container item flexDirection="column">
-              <Grid2 item>
-                <Label label="Name" />
-              </Grid2>
-              <Grid2 item>
-                <InputBase type="text" name="user_name" required />
-              </Grid2>
-            </Grid2>
-            <Grid2 container item flexDirection="column">
-              <Grid2 item>
-                <Label label="Message" />
-              </Grid2>
-              <Grid2 item>
-                <InputBase
-                  name="message"
-                  required
-                  multiline
-                  minRows={5}
-                  maxRows={8}
-                />
-              </Grid2>
-            </Grid2>
-            <Grid2 container item flexDirection="column">
-              <Grid2 item>
-                <Label label="Email" />
-              </Grid2>
-              <Grid2 item>
-                <InputBase type="email" name="user_email" required />
-              </Grid2>
-            </Grid2>
+          {/* Last Name */}
+          <Grid2 item xs={12}>
+            <TextField
+              fullWidth
+              label="Last Name"
+              name="last_name"
+              value={formData.last_name}
+              onChange={handleChange}
+              required
+            />
           </Grid2>
-          <Grid2
-            container
-            item
-            justifyContent="space-between"
-            xs={12}
-            spacing={3}
-            mb={4}
-          >
-            <Grid2 item xs={5}>
-              <Button
-                variant="outlined"
-                fullWidth
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "primary.main",
-                    border: `1px solid ${theme.palette.primary.main}`,
-                  },
-                }}
+          {/* Email */}
+          <Grid2 item xs={12}>
+            <TextField
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </Grid2>
+
+          {/* Phone Number */}
+          <Grid2 item xs={12}>
+            <TextField
+              fullWidth
+              label="Phone Number"
+              name="phone_number"
+              value={formData.phone_number}
+              onChange={handleChange}
+              required
+            />
+          </Grid2>
+
+          {/* Profile Picture URL */}
+          <Grid2 item xs={12} >
+            <TextField
+              fullWidth
+              label="Profile Picture URL"
+              name="profile_picture"
+              value={formData.profile_picture}
+              onChange={handleChange}
+            />
+          </Grid2>
+
+          {/* Pronouns */}
+          <Grid2 item xs={12}>
+            <TextField
+              fullWidth
+              label="Pronouns"
+              name="pronouns"
+              value={formData.pronouns}
+              onChange={handleChange}
+            />
+          </Grid2>
+
+          {/* Age Group */}
+          <Grid2 item xs={12}>
+            <InputLabel>Age Group</InputLabel>
+            <Select
+              name="age_group"
+              value={formData.age_group}
+              onChange={handleChange}
+            >
+              <MenuItem value="18-25">18-25</MenuItem>
+              <MenuItem value="26-35">26-35</MenuItem>
+              <MenuItem value="36-45">36-45</MenuItem>
+              <MenuItem value="46+">46+</MenuItem>
+            </Select>
+            <FormHelperText>Select your age group</FormHelperText>
+          </Grid2>
+
+          {/* Interested Genders */}
+          <Grid2 item xs={12}>
+            <InputLabel>Interested Genders</InputLabel>
+            <Select
+              multiple
+              value={formData.interested_genders}
+              onChange={(e) =>
+                handleArrayChange("interested_genders", e.target.value)
+              }
+              renderValue={(selected) => (
+                <div>
+                  {selected.map((value) => (
+                    <Chip key={value} label={value} />
+                  ))}
+                </div>
+              )}
+            >
+              <MenuItem value="Men">Men</MenuItem>
+              <MenuItem value="Women">Women</MenuItem>
+              <MenuItem value="Non-binary">Non-binary</MenuItem>
+              <MenuItem value="Other">Other</MenuItem>
+            </Select>
+            <FormHelperText>
+              Select all genders you're interested in
+            </FormHelperText>
+          </Grid2>
+
+          {/* Preferred Age Range */}
+          <Grid2 item xs={12}>
+            <InputLabel>Preferred Age Range</InputLabel>
+            <Select
+              multiple
+              value={formData.preferred_age_range}
+              onChange={(e) =>
+                handleArrayChange("preferred_age_range", e.target.value)
+              }
+              renderValue={(selected) => (
+                <div>
+                  {selected.map((value) => (
+                    <Chip key={value} label={value} />
+                  ))}
+                </div>
+              )}
+            >
+              <MenuItem value="18-25">18-25</MenuItem>
+              <MenuItem value="26-35">26-35</MenuItem>
+              <MenuItem value="36-45">36-45</MenuItem>
+              <MenuItem value="46+">46+</MenuItem>
+            </Select>
+            <FormHelperText>Select your preferred age ranges</FormHelperText>
+          </Grid2>
+
+          {/* Weekend Preference */}
+          <Grid2 item xs={12}>
+            <FormControl fullWidth required>
+              <InputLabel>Weekend Preference</InputLabel>
+              <Select
+                name="weekend_preference"
+                value={formData.weekend_preference}
+                onChange={handleChange}
               >
-                <Typography variant="h6" color="inherit">
-                  Cancel
-                </Typography>
-              </Button>
-            </Grid2>
-            <Grid2 item xs={7}>
-              <Button
-                variant="outlined"
-                type="submit"
-                value="Send"
-                disabled={success === "sending"}
-                fullWidth
-              >
-                <Typography variant="h6" color="inherit">
-                  {success === "sending" ? "Sending..." : "Send Message"}
-                </Typography>
-              </Button>
-            </Grid2>
+                <MenuItem value="Netflix">Netflix</MenuItem>
+                <MenuItem value="Nature">Nature</MenuItem>
+                <MenuItem value="Party">Party</MenuItem>
+                <MenuItem value="Exploring">Exploring</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid2>
+
+          {/* Submit Button */}
+          <Grid2 item xs={12}>
+            <Button variant="contained" color="primary" type="submit" fullWidth>
+              Submit Registration
+            </Button>
           </Grid2>
         </Grid2>
-        {success === "not_sent_yet" || success === "sending" ? null : (
-          <Alert
-            severity={success === "sent_successfully" ? "success" : "error"}
-          >
-            {success === "sent_successfully"
-              ? "Your message was sent sucessfully!"
-              : "Something went wrong. Please try again."}
-          </Alert>
-        )}
       </form>
     </Box>
   );

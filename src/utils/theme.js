@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material";
 let theme = createTheme({
   palette: {
     primary: {
-      main: "#050301",
+      main: "#0D0907",
     },
     secondary: {
       main: "rgba(250, 250, 250, 0.5)",
@@ -12,7 +12,7 @@ let theme = createTheme({
       main: "#A2FF00",
     },
     background: {
-      default: "#0C0908",
+      default: "#141414",
     },
   },
   shape: {
@@ -131,8 +131,6 @@ theme = createTheme(theme, {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          boxShadow: "none",
-          borderBottom: `1px solid ${theme.palette.grey[900]}`,
           backgroundColor: "rgba(246, 246, 246, 0.5)",
           maxWidth: "100vw",
         },
@@ -157,18 +155,39 @@ theme = createTheme(theme, {
       styleOverrides: {
         root: {
           backgroundColor: theme.palette.primary.main,
+          color: theme.palette.common.white,
           border: "2px solid white",
           borderColor: theme.palette.tertiary.main,
           borderRadius: "0.F5rem",
           padding: "2%",
-          width: "fit-content",
           cursor: "pointer",
           "&:hover": {
-            scale: "1.01",
+            scale: "1.005",
           },
           "&.Mui-focused": {
             backgroundColor: theme.palette.grey[900],
           },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: theme.palette.common.white,
+          backgroundColor: theme.palette.common.black,
+
+          "&.Mui-focused": {
+            color: theme.palette.common.white,
+            backgroundColor: theme.palette.common.black,
+            padding: "1%",
+          },
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          color: theme.palette.grey[300],
         },
       },
     },
