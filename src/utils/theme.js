@@ -3,16 +3,16 @@ import { createTheme } from "@mui/material";
 let theme = createTheme({
   palette: {
     primary: {
-      main: "#0D0907",
+      main: "#000000",
     },
     secondary: {
-      main: "rgba(250, 250, 250, 0.5)",
+      main: "rgba(250, 250, 250, 0.7)",
     },
     tertiary: {
       main: "#A2FF00",
     },
     background: {
-      default: "#141414",
+      default: "#0D0907",
     },
   },
   shape: {
@@ -40,6 +40,7 @@ theme = createTheme(theme, {
       color: "#FFFFFF",
       fontSize: "2.5rem",
       textTransform: "none",
+      fontFamily: "Lexend Variable"
     },
     h4: {
       color: "#FFFFFF",
@@ -47,8 +48,9 @@ theme = createTheme(theme, {
       textTransform: "none",
     },
     h5: {
-      fontSize: "1.1rem",
+      fontSize: "1.3rem",
       color: theme.palette.secondary.main,
+      
     },
     h6: {
       fontSize: "0.875rem",
@@ -182,6 +184,11 @@ theme = createTheme(theme, {
             padding: "1%",
           },
         },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: { color: theme.palette.common.white },
       },
     },
     MuiFormHelperText: {

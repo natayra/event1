@@ -7,11 +7,12 @@ import { theme } from "../../utils/theme";
 import { Link as RouterLink } from "react-router-dom";
 import useDialog from "../hooks/useDialog";
 import RegisterButton from "./RegisterButton";
+import { Link } from "react-router-dom";
 
 const sections = [
-  { name: "Home", href: "/" },
-  { name: "About us" },
-  { name: "Contact" },
+  { name: "About us", to: "#aboutus" },
+  { name: "Events", to: "#events", href: "/events" },
+  { name: "Contact", to: "#contact" },
 ];
 export default function TopBar() {
   const [clicked, setClicked] = useState("Home");
@@ -24,11 +25,10 @@ export default function TopBar() {
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  console.log("here", window.location.hash);
+
   return (
-    <AppBar
-      position="fixed"
-   
-    >
+    <AppBar position="fixed">
       <Toolbar
         sx={{
           backdropFilter: "blur(3px)",
@@ -44,13 +44,15 @@ export default function TopBar() {
           px="1%"
         >
           <Grid2 container item height="fit-content" alignItems="center">
-            <LogoBlack
-              sx={{
-                height: "4rem",
-                width: "4rem",
-                padding: 0,
-              }}
-            />
+            <Button variant="text" disableRipple href="/">
+              <LogoBlack
+                sx={{
+                  height: "4rem",
+                  width: "4rem",
+                  padding: 0,
+                }}
+              />
+            </Button>
           </Grid2>
           <Grid2
             container
@@ -73,7 +75,9 @@ export default function TopBar() {
                   variant="text"
                   fullWidth
                   disableRipple
+                  component={Link}
                   href={section.href}
+                  to={section.to}
                   sx={{
                     color:
                       clicked === section.name

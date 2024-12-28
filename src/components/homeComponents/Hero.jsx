@@ -59,7 +59,11 @@ const Hero = () => {
             <LogoWhiteLettersNoBackground sx={{ fontSize: "16rem" }} />
           </Grid2>
           <Grid2 item>
-            <Typography variant="h3" fontSize={{ xs: "1.5rem", md: "2.5rem" }}>
+            <Typography
+              variant="h3"
+              fontSize={{ xs: "1.5rem", md: "2.5rem" }}
+              fontFamily="Outfit Variable"
+            >
               Dating can be fun
             </Typography>
           </Grid2>
