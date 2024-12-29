@@ -1,16 +1,16 @@
 import { Grid2, Typography } from "@mui/material";
 
-const AboutUs = () => {
+const About = () => {
   return (
     <Grid2
       container
       flexDirection="column"
       alignItems="center"
       rowGap="5vh"
-      id="#aboutus"
+      id="#about"
     >
       <Grid2 item>
-        <Typography variant="h3">About us</Typography>
+        <Typography variant="h3">About</Typography>
       </Grid2>
       <Grid2
         container
@@ -83,4 +83,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;

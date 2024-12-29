@@ -10,7 +10,7 @@ import RegisterButton from "./RegisterButton";
 import { Link } from "react-router-dom";
 
 const sections = [
-  { name: "About us", to: "#aboutus" },
+  { name: "About", to: "#about" },
   { name: "Events", to: "#events", href: "/events" },
   { name: "Contact", to: "#contact" },
 ];

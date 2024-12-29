@@ -86,7 +86,7 @@ const ContactForm = () => {
               disabled={success === "sending"}
               sx={{ padding: "1% 1.5%" }}
             >
-              <Typography variant="h5" color="inherit">
+              <Typography variant="h6" color="inherit">
                 {success === "sending" ? "Sending..." : "Send Message"}
               </Typography>
             </Button>

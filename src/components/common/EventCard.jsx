@@ -1,45 +1,89 @@
-import { Button, Typography, Grid2 } from "@mui/material";
+import { Button, Typography, Grid2, Link } from "@mui/material";
 import { theme } from "../../utils/theme";
 
-const EventCard = ({ id, name, date, location, address, ageRange }) => {
-  console.log(name);
-
+const EventCard = ({ id, name, date, location, ageRange }) => {
   return (
-    <Button
-      variant="container"
-      href={`/register/${id}`}
+    <Grid2
+      container
+      item
+      flexDirection="column"
+      rowGap="2.5vh"
       sx={{
         backgroundColor: theme.palette.primary.main,
         border: "2px solid white",
-        borderColor: theme.palette.tertiary.main,
-        padding: "2%",
-        width: "fit-content",
-        cursor: "pointer",
-        "&:hover": {
-          scale: "1.01",
-        },
+        borderColor: theme.palette.secondary.main,
+        padding: "3%",
+        borderRadius: "0.5rem",
+        "-webkit-filter": id === "1" ? "none" : "blur(5px)",
       }}
     >
-      <Grid2 container flexDirection="column" width="fit-content">
-        <Grid2 item>
-          <Typography variant="h4">{name}</Typography>
+      <Grid2 item>
+        <Typography variant="h4">{name}</Typography>
+      </Grid2>
+      <Grid2 container item flexDirection="column">
+        <Grid2 container item flexWrap="nowrap">
+          <Grid2 item>
+            <Typography variant="h5" paddingRight="1rem">
+              When:
+            </Typography>
+          </Grid2>
+          <Grid2 item>
+            <Typography variant="h5" color="rgba(255, 255, 255, 0.8)">
+              {date}
+            </Typography>
+          </Grid2>
         </Grid2>
-        <Grid2 container item flexDirection="column">
+        <Grid2 container item flexWrap="nowrap">
           <Grid2 item>
-            <Typography variant="h5">Date: {date}</Typography>
+            <Typography variant="h5" paddingRight="1rem">
+              Where:
+            </Typography>
           </Grid2>
           <Grid2 item>
-            <Typography variant="h5">Location: {location}</Typography>
+            <Link
+              target="_blank"
+              href="https://www.google.com/maps/place/RAUM+84+-+Eventlocation+-+Bar+-+-+Ping+Pong+-+Karaoke+-+Partylocation/@47.377722,8.5240872,17z/data=!3m1!4b1!4m6!3m5!1s0x47900bbe3703f315:0x1a0c298106545962!8m2!3d47.377722!4d8.5266621!16s%2Fg%2F11rht1c0b5?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  textDecoration: "underline",
+                  color: "rgba(255, 255, 255, 0.8)",
+                }}
+              >
+                {location}
+              </Typography>
+            </Link>
+          </Grid2>
+        </Grid2>
+        <Grid2 container item flexWrap="nowrap">
+          <Grid2 item>
+            <Typography variant="h5" paddingRight="1rem">
+              Who:
+            </Typography>
           </Grid2>
           <Grid2 item>
-            <Typography variant="h5">Address: {address}</Typography>
-          </Grid2>
-          <Grid2 item>
-            <Typography variant="h5">Age Range: {ageRange}</Typography>
+            <Typography variant="h5" color="rgba(255, 255, 255, 0.8)">
+              Singles from {ageRange}
+            </Typography>
           </Grid2>
         </Grid2>
       </Grid2>
-    </Button>
+      <Button
+        disabled={id !== "1"}
+        sx={{
+          "&:disabled": {
+            backgroundColor: theme.palette.tertiary.main,
+            color: theme.palette.primary.main,
+            border: `2px solid ${theme.palette.tertiary.main}`,
+          },
+        }}
+        variant="outlined"
+        href={`/register/${id}`}
+      >
+        Register
+      </Button>
+    </Grid2>
   );
 };
 

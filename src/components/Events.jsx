@@ -5,11 +5,31 @@ import TopBar from "./common/TopBar";
 const EventsInfo = [
   {
     id: "1",
-    name: "Dating Event - Zurich",
-    date: "February 7, 2025 ",
-    location: "Raum 84",
-    address: " Langstrasse 84, 8004 Zürich",
-    ageRange: "23 - 39 years old",
+    name: "Friday Night @ Raum84",
+    date: "Friday, February 7, 2025 | 7:00 PM",
+    location: "Raum 84 - Langstrasse 84, 8004 Zurich",
+    ageRange: "23 to 39 years old",
+  },
+  {
+    id: "2",
+    name: "Something @ place",
+    date: "Friday, Month D, Year | 7:00 PM",
+    location: "Someplace - Some Street Number 20",
+    ageRange: "23 to 39 years old",
+  },
+  {
+    id: "3",
+    name: "Something @ place",
+    date: "Friday, Month D, Year | 7:00 PM",
+    location: "Someplace - Some Street Number 440",
+    ageRange: "23 to 39 years old",
+  },
+  {
+    id: "4",
+    name: "Something @ place",
+    date: "Friday, Month D, Year | 7:00 PM",
+    location: "Someplace - Some Street Number 2",
+    ageRange: "23 to 39 years old",
   },
 ];
 
@@ -19,22 +39,19 @@ const Events = () => {
       <TopBar />
       <Grid2
         container
+        justifyContent="center"
         mt={{ xs: "5rem", md: "7rem" }}
-        flexDirection="column"
-        spacing={4}
-        px="5%"
+        px="4%"
+        spacing={8}
       >
         {EventsInfo.map((event) => (
-          <Grid2 item>
-            <EventCard
-              id={event.id}
-              name={event.name}
-              date={event.date}
-              location={event.location}
-              address={event.address}
-              ageRange={event.ageRange}
-            />
-          </Grid2>
+          <EventCard
+            id={event.id}
+            name={event.name}
+            date={event.date}
+            location={event.location}
+            ageRange={event.ageRange}
+          />
         ))}
       </Grid2>
     </Box>

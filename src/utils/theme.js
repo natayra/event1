@@ -61,7 +61,6 @@ theme = createTheme(theme, {
     MuiCssBaseline: {
       backgroundColor: "#000000",
       color: "#FFFFFF",
-      
     },
     MuiButton: {
       variants: [
@@ -117,7 +116,11 @@ theme = createTheme(theme, {
               backgroundColor: theme.palette.tertiary.main,
               color: theme.palette.primary.main,
             },
-            [theme.breakpoints.down("sm")]: {},
+            [`&.MuiButton-outlined.Mui-disabled`]: {
+              color: theme.palette.common.white,
+              border: `2px solid ${theme.palette.tertiary.main}`,
+              opacity: "0.8",
+            },
           },
         },
       ],
@@ -171,9 +174,9 @@ theme = createTheme(theme, {
             backgroundColor: theme.palette.grey[900],
           },
           input: {
-            '&:-webkit-autofill': {
+            "&:-webkit-autofill": {
               WebkitBoxShadow: `0 0 0 100px #000000 inset`,
-              WebkitTextFillColor: '#fff !important',
+              WebkitTextFillColor: "#fff !important",
               borderRadius: "0.5rem",
             },
           },
