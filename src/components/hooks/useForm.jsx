@@ -11,7 +11,7 @@ export const useForm = () => {
     emailjs
       .sendForm(
         "service_eftphki",
-        "voii_form",
+        "voii_contact_form",
         form.current,
         "_pBxOu54fGe7sgp4W"
       )

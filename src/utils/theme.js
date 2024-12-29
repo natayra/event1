@@ -40,7 +40,7 @@ theme = createTheme(theme, {
       color: "#FFFFFF",
       fontSize: "2.5rem",
       textTransform: "none",
-      fontFamily: "Lexend Variable"
+      fontFamily: "Lexend Variable",
     },
     h4: {
       color: "#FFFFFF",
@@ -50,7 +50,6 @@ theme = createTheme(theme, {
     h5: {
       fontSize: "1.3rem",
       color: theme.palette.secondary.main,
-      
     },
     h6: {
       fontSize: "0.875rem",
@@ -62,6 +61,7 @@ theme = createTheme(theme, {
     MuiCssBaseline: {
       backgroundColor: "#000000",
       color: "#FFFFFF",
+      
     },
     MuiButton: {
       variants: [
@@ -105,7 +105,7 @@ theme = createTheme(theme, {
           props: { variant: "outlined" },
           style: {
             borderRadius: 10,
-            border: `2px solid ${theme.palette.secondary.main}`,
+            border: `2px solid ${theme.palette.tertiary.main}`,
             padding: "0.25rem 1rem",
             color: theme.palette.common.white,
             textTransform: "none",
@@ -114,7 +114,8 @@ theme = createTheme(theme, {
             opacity: 0.9,
             fontWeight: 800,
             "&:hover": {
-              backgroundColor: theme.palette.grey[800],
+              backgroundColor: theme.palette.tertiary.main,
+              color: theme.palette.primary.main,
             },
             [theme.breakpoints.down("sm")]: {},
           },
@@ -161,7 +162,7 @@ theme = createTheme(theme, {
           border: "2px solid white",
           borderColor: theme.palette.tertiary.main,
           borderRadius: "0.F5rem",
-          padding: "2%",
+          padding: "0.5% 2%",
           cursor: "pointer",
           "&:hover": {
             scale: "1.005",
@@ -169,19 +170,26 @@ theme = createTheme(theme, {
           "&.Mui-focused": {
             backgroundColor: theme.palette.grey[900],
           },
+          input: {
+            '&:-webkit-autofill': {
+              WebkitBoxShadow: `0 0 0 100px #000000 inset`,
+              WebkitTextFillColor: '#fff !important',
+              borderRadius: "0.5rem",
+            },
+          },
         },
       },
     },
     MuiInputLabel: {
       styleOverrides: {
         root: {
+          marginTop: "-0.5%",
           color: theme.palette.common.white,
           backgroundColor: theme.palette.common.black,
-
           "&.Mui-focused": {
             color: theme.palette.common.white,
             backgroundColor: theme.palette.common.black,
-            padding: "1%",
+            padding: "0.5% 1%",
           },
         },
       },

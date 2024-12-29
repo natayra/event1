@@ -1,7 +1,7 @@
 import { Grid2, Grow, Typography } from "@mui/material";
 import Banner from "../../assets/image.jpg";
 import { useState, useEffect } from "react";
-import LogoWhiteLettersNoBackground from "../assets/LogoWhiteLettersNoBackground";
+import LogoWhiteLettersNoBackground from "../svgComponents/LogoWhiteLettersNoBackground";
 
 const Hero = () => {
   const [transition, setTransition] = useState(false);
@@ -22,11 +22,11 @@ const Hero = () => {
       <Grid2
         container
         height="95vh"
+        width="100%"
         justifyContent="center"
         alignItems="center"
       >
         <Grid2
-          container
           item
           height="100%"
           width="100%"

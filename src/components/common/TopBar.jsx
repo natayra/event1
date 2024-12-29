@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Grid2, Button, Dialog, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import LogoBlack from "../assets/LogoBlack";
+import LogoBlack from "../svgComponents/LogoBlack";
 import { theme } from "../../utils/theme";
 import { Link as RouterLink } from "react-router-dom";
 import useDialog from "../hooks/useDialog";
