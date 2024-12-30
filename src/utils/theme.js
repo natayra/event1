@@ -50,6 +50,9 @@ theme = createTheme(theme, {
     h5: {
       fontSize: "1.3rem",
       color: theme.palette.secondary.main,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1rem",
+      },
     },
     h6: {
       fontSize: "0.875rem",

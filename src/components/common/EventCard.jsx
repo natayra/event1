@@ -21,11 +21,9 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         <Typography variant="h4">{name}</Typography>
       </Grid2>
       <Grid2 container item flexDirection="column">
-        <Grid2 container item flexWrap="nowrap">
+        <Grid2 container item flexWrap="nowrap" spacing="0.5rem">
           <Grid2 item>
-            <Typography variant="h5" paddingRight="1rem">
-              When:
-            </Typography>
+            <Typography variant="h5">When:</Typography>
           </Grid2>
           <Grid2 item>
             <Typography variant="h5" color="rgba(255, 255, 255, 0.8)">
@@ -33,11 +31,14 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
             </Typography>
           </Grid2>
         </Grid2>
-        <Grid2 container item flexWrap="nowrap">
+        <Grid2
+          container
+          item
+          flexWrap="nowrap"
+          spacing={{ xs: "1rem", md: "0.5rem" }}
+        >
           <Grid2 item>
-            <Typography variant="h5" paddingRight="1rem">
-              Where:
-            </Typography>
+            <Typography variant="h5">Where:</Typography>
           </Grid2>
           <Grid2 item>
             <Link
@@ -56,11 +57,9 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
             </Link>
           </Grid2>
         </Grid2>
-        <Grid2 container item flexWrap="nowrap">
+        <Grid2 container item flexWrap="nowrap" spacing="0.5rem">
           <Grid2 item>
-            <Typography variant="h5" paddingRight="1rem">
-              Who:
-            </Typography>
+            <Typography variant="h5">Who:</Typography>
           </Grid2>
           <Grid2 item>
             <Typography variant="h5" color="rgba(255, 255, 255, 0.8)">
@@ -81,7 +80,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         variant="outlined"
         href={`https://eventfrog.ch/en/p/dating/singles-party/voii-dating-event-7279459950190856068.html`}
       >
-        Buy ticket 
+        Buy ticket
       </Button>
     </Grid2>
   );

@@ -8,6 +8,7 @@ import { Link as RouterLink } from "react-router-dom";
 import useDialog from "../hooks/useDialog";
 import RegisterButton from "./RegisterButton";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const sections = [
   { name: "About", to: "#about" },
@@ -20,12 +21,14 @@ export default function TopBar() {
 
   const handleClick = (sectionName) => {
     setClicked(sectionName);
+
     document
       .getElementById(window.location.hash)
       ?.scrollIntoView({ behavior: "smooth" });
   };
+  const location = useLocation();
 
-  console.log("here", window.location.hash);
+  console.log("here", location.pathname);
 
   return (
     <AppBar position="fixed">
@@ -76,8 +79,8 @@ export default function TopBar() {
                   fullWidth
                   disableRipple
                   component={Link}
-                  href={section.href}
-                  to={section.to}
+                  href={location.pathname === "/" ? section.href : "/"}
+                  to={location.pathname === "/" ? section.to : `/${section.to}`}
                   sx={{
                     color:
                       clicked === section.name
@@ -129,7 +132,7 @@ export default function TopBar() {
                   <Button
                     variant="text"
                     underline="hover"
-                    to={item.to}
+                    to={location.pathname === "/" ? item.to : `/${item.to}`}
                     component={RouterLink}
                     onClick={() => setClicked(item.name)}
                     sx={{

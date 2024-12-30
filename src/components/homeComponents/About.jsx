@@ -2,13 +2,7 @@ import { Grid2, Typography } from "@mui/material";
 
 const About = () => {
   return (
-    <Grid2
-      container
-      flexDirection="column"
-      alignItems="center"
-      rowGap="5vh"
-      id="#about"
-    >
+    <Grid2 container flexDirection="column" alignItems="center" rowGap="5vh">
       <Grid2 item>
         <Typography variant="h3">About</Typography>
       </Grid2>
