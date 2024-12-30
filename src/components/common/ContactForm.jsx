@@ -24,7 +24,7 @@ const ContactForm = () => {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <Grid2 container flexDirection="column" spacing={8} width="60vw">
+      <Grid2 container flexDirection="column" spacing={8} width={{xs: "80vw", md: "60vw"}}>
         <Grid2 item>
           <Typography variant="h4">Send us a message!</Typography>
         </Grid2>
@@ -84,7 +84,7 @@ const ContactForm = () => {
               type="submit"
               value="Send"
               disabled={success === "sending"}
-              sx={{ padding: "1% 1.5%" }}
+              sx={{ padding: {xs: "1% 3%", md: "1% 1.5%"} }}
             >
               <Typography variant="h6" color="inherit">
                 {success === "sending" ? "Sending..." : "Send Message"}

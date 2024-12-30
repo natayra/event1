@@ -18,7 +18,7 @@ const EventsComponent = () => {
           background: `transparent url(${EventsBanner}) no-repeat center`,
           backgroundSize: "cover",
           "-webkit-filter": "blur(8px)",
-          height: "60vh",
+          height: {xs: "100vh", sm: "60vh"},
           width: "85vw",
         }}
       />
@@ -29,15 +29,15 @@ const EventsComponent = () => {
         rowGap="4vh"
         sx={{
           position: "relative",
-          top: "-40vh",
+          top: {xs: "-60vh", sm: "-40vh"},
           background: "rgba(0, 0, 0, 0.9)",
           padding: { xs: "1rem 2rem 2rem 2rem", md: "3%" },
           borderRadius: "1rem",
         }}
       >
         <Grid2 item>
-          <Typography variant="h4" fontFamily="Outfit Variable">
-            Meet, vibe, and connect — check out what’s up next!
+          <Typography variant="h4" textAlign="center" fontFamily="Outfit Variable">
+            Meet, vibe, and connect. Check out what’s up next!
           </Typography>
         </Grid2>
         <Grid2 item>

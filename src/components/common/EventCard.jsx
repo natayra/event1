@@ -79,9 +79,9 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
           },
         }}
         variant="outlined"
-        href={`/register/${id}`}
+        href={`https://eventfrog.ch/en/p/dating/singles-party/voii-dating-event-7279459950190856068.html`}
       >
-        Register
+        Buy ticket 
       </Button>
     </Grid2>
   );
