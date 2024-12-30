@@ -70,6 +70,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
       </Grid2>
       <Button
         disabled={id !== "1"}
+        target="_blank"
         sx={{
           "&:disabled": {
             backgroundColor: theme.palette.tertiary.main,
