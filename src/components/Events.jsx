@@ -40,7 +40,7 @@ const Events = () => {
       <Grid2
         container
         justifyContent="center"
-        mt={{ xs: "5rem", md: "7rem" }}
+        mt="7rem"
         px="4%"
         spacing={8}
       >
