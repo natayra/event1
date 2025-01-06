@@ -10,7 +10,7 @@ export const useForm = () => {
     setSuccess("sending");
     emailjs
       .sendForm(
-        "service_eftphki",
+        "service_eq8zn0t",
         "voii_contact_form",
         form.current,
         "_pBxOu54fGe7sgp4W"

@@ -33,7 +33,7 @@ const Home = () => {
       >
         <Contact />
       </Grid2>
-      <Grid2 item textAlign="center" pt="8%" pb="2%">
+      <Grid2 item textAlign="center" pt="8%" pb={{xs: "7%", md: "2%"}} >
         <Footer />
       </Grid2>
     </Grid2>
