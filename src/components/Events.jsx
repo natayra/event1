@@ -8,7 +8,7 @@ const EventsInfo = [
     name: "Friday Night @ Raum84",
     date: "Friday, February 7, 2025 | 7:00 PM",
     location: "Raum 84 - Langstrasse 84, 8004 Zurich",
-    ageRange: "23 to 39 years old",
+    ageRange: "20s and 30s",
   },
   {
     id: "2",

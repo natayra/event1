@@ -8,7 +8,7 @@ import Footer from "./common/Footer";
 
 const Home = () => {
   return (
-    <Grid2
+   <Grid2
       container
       flexDirection="column"
       justifyContent="center"

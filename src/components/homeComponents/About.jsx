@@ -16,7 +16,7 @@ const About = () => {
       >
         <Grid2 item>
           <Typography variant="h5" textAlign="center">
-            Welcome to Voii, the ultimate{" "}
+            Welcome to the ultimate{" "}
             <strong style={{ color: "rgba(250, 250, 250, 0.75" }}>
               in-person dating event
             </strong>{" "}
@@ -26,7 +26,7 @@ const About = () => {
         <Grid2 item>
           <Typography variant="h5" textAlign="center">
             If you’re tired of the same old scene — bars, small talk about
-            hobbies, and the endless "Where are you from?" loop — then Voii is
+            hobbies, and the endless "Where are you from?" loop — then this is
             exactly what you’ve been waiting for.
           </Typography>
         </Grid2>
@@ -36,10 +36,10 @@ const About = () => {
             <strong style={{ color: "rgba(250, 250, 250, 0.75" }}>
               meeting people should be fun
             </strong>
-            , fresh, and stress-free, Voii is all about creating a space where
+            , fresh, and stress-free, our events are all about creating a space where
             singles can connect in ways that feel authentic and exciting.
             Whether you're a social butterfly or someone who prefers a little
-            nudge to get started, we’ve got something for you. At Voii, we
+            nudge to get started, we’ve got something for you. We
             believe dating should be an adventure. That’s why{" "}
             <strong style={{ color: "rgba(250, 250, 250, 0.75" }}>
               our events are filled with games, activities, and unique dynamics
@@ -56,8 +56,7 @@ const About = () => {
             </strong>{" "}
             how to navigate it. And hey, even if sparks don’t fly, you’ll still
             leave with great memories and maybe even some new friends. We’re all
-            in this together—the ups, the nerves, the laughs. So come join us at
-            Voii, where{" "}
+            in this together—the ups, the nerves, the laughs. So come join us at where{" "}
             <strong style={{ color: "rgba(250, 250, 250, 0.75" }}>
               dating meets fun
             </strong>

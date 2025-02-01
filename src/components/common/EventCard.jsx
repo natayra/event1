@@ -63,7 +63,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
           </Grid2>
           <Grid2 item>
             <Typography variant="h5" color="rgba(255, 255, 255, 0.8)">
-              Singles from {ageRange}
+              Singles on their {ageRange}
             </Typography>
           </Grid2>
         </Grid2>

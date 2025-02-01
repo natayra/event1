@@ -1,7 +1,7 @@
 import { Grid2, Grow, Typography } from "@mui/material";
 import Banner from "../../assets/image.jpg";
 import { useState, useEffect } from "react";
-import LogoWhiteLettersNoBackground from "../svgComponents/LogoWhiteLettersNoBackground";
+import LogoBlack from "../../assets/back2.png";
 
 const Hero = () => {
   const [transition, setTransition] = useState(false);
@@ -52,20 +52,11 @@ const Hero = () => {
             top: { xs: "22vh", md: "37%" },
             background: "rgba(255, 255, 255, 0.2)",
             borderRadius: "1rem",
-            padding: { xs: "1rem 2rem 2rem 2rem", md: "1% 2% 2% 2%" },
+            padding: { xs: "1rem 2rem 0rem 2rem", md: "1% 2% 0% 2%" },
           }}
         >
           <Grid2 item>
-            <LogoWhiteLettersNoBackground sx={{ fontSize: "16rem" }} />
-          </Grid2>
-          <Grid2 item>
-            <Typography
-              variant="h3"
-              fontSize={{ xs: "1.5rem", md: "2.5rem" }}
-              fontFamily="Outfit Variable"
-            >
-              Dating can be fun
-            </Typography>
+            <img src={LogoBlack} height="100%" />
           </Grid2>
         </Grid2>
       </Grid2>

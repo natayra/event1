@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Grid2, Button, Dialog, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import LogoBlack from "../svgComponents/LogoBlack";
+import LogoBlack from "../../assets/logo_black.jpg";
 import { theme } from "../../utils/theme";
 import { Link as RouterLink } from "react-router-dom";
 import useDialog from "../hooks/useDialog";
@@ -48,13 +48,7 @@ export default function TopBar() {
         >
           <Grid2 container item height="fit-content" alignItems="center">
             <Button variant="text" disableRipple href="/">
-              <LogoBlack
-                sx={{
-                  height: "4rem",
-                  width: "4rem",
-                  padding: 0,
-                }}
-              />
+              <img src={LogoBlack} width="100vw" height="100%" />
             </Button>
           </Grid2>
           <Grid2
