@@ -1,5 +1,6 @@
 import { Button, Typography, Grid2, Link } from "@mui/material";
 import { theme } from "../../utils/theme";
+import Expect from "../Expect";
 
 const EventCard = ({ id, name, date, location, ageRange }) => {
   return (
@@ -7,6 +8,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
       container
       item
       flexDirection="column"
+      alignItems="center"
       rowGap="2.5vh"
       sx={{
         backgroundColor: theme.palette.primary.main,
@@ -17,10 +19,10 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         "-webkit-filter": id === "1" ? "none" : "blur(5px)",
       }}
     >
-      <Grid2 item>
+      <Grid2 item textAlign="center">
         <Typography variant="h4">{name}</Typography>
       </Grid2>
-      <Grid2 container item flexDirection="column">
+      <Grid2 container item flexDirection="column" alignItems="center">
         <Grid2 container item flexWrap="nowrap" spacing="0.5rem">
           <Grid2 item>
             <Typography variant="h5">When:</Typography>
@@ -72,6 +74,9 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         disabled={id !== "1"}
         target="_blank"
         sx={{
+          width: "50%",
+          fontSize: "1rem",
+          marginY: "1rem",
           "&:disabled": {
             backgroundColor: theme.palette.tertiary.main,
             color: theme.palette.primary.main,
@@ -83,6 +88,9 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
       >
         Buy ticket
       </Button>
+      <Grid2 item id="#expect" textAlign="center" pt={{ xs: "25%", md: "8%" }}>
+        <Expect />
+      </Grid2>
     </Grid2>
   );
 };

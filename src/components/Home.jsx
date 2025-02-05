@@ -5,10 +5,11 @@ import About from "./homeComponents/About";
 import EventsComponent from "./homeComponents/EventsComponent";
 import Contact from "./homeComponents/Contact";
 import Footer from "./common/Footer";
+import Expect from "./Expect";
 
 const Home = () => {
   return (
-   <Grid2
+    <Grid2
       container
       flexDirection="column"
       justifyContent="center"
@@ -33,7 +34,7 @@ const Home = () => {
       >
         <Contact />
       </Grid2>
-      <Grid2 item textAlign="center" pt="8%" pb={{xs: "7%", md: "2%"}} >
+      <Grid2 item textAlign="center" pt="8%" pb={{ xs: "7%", md: "2%" }}>
         <Footer />
       </Grid2>
     </Grid2>
