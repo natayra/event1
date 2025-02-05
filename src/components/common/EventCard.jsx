@@ -8,7 +8,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
       container
       item
       flexDirection="column"
-      alignItems="center"
+      alignItems={{xs: "flex-start", md: "center"}}
       rowGap="2.5vh"
       sx={{
         backgroundColor: theme.palette.primary.main,
@@ -19,10 +19,10 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         "-webkit-filter": id === "1" ? "none" : "blur(5px)",
       }}
     >
-      <Grid2 item textAlign="center">
+      <Grid2 item >
         <Typography variant="h4">{name}</Typography>
       </Grid2>
-      <Grid2 container item flexDirection="column" alignItems="center">
+      <Grid2 container item flexDirection="column" alignItems={{xs: "flex-start", md: "center"}}>
         <Grid2 container item flexWrap="nowrap" spacing="0.5rem">
           <Grid2 item>
             <Typography variant="h5">When:</Typography>
@@ -76,7 +76,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         sx={{
           width: "50%",
           fontSize: "1rem",
-          marginY: "1rem",
+          marginTop: "1rem",
           "&:disabled": {
             backgroundColor: theme.palette.tertiary.main,
             color: theme.palette.primary.main,
@@ -88,7 +88,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
       >
         Buy ticket
       </Button>
-      <Grid2 item id="#expect" textAlign="center" pt={{ xs: "25%", md: "8%" }}>
+      <Grid2 item id="#expect" pt={{ xs: "25%", md: "8%" }}>
         <Expect />
       </Grid2>
     </Grid2>
