@@ -91,6 +91,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
       <Grid2 item id="#expect" pt={{ xs: "25%", md: "8%" }}>
         <Expect />
       </Grid2>
+      
     </Grid2>
   );
 };
