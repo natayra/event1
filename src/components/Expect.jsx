@@ -33,7 +33,7 @@ const Expect = () => {
           </Typography>
           <Typography variant="h5" mt="1%">
             Start mingling, challenge someone to a game, and get the flirtation
-            flowing!{" "}
+            flowing!
           </Typography>
           <Typography variant="h5" my="2%" fontWeight="800">
             🎲 19:30 - 20:30 | Icebreaker Games & Casual Chaos{" "}
