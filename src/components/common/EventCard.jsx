@@ -16,7 +16,7 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         borderColor: theme.palette.secondary.main,
         padding: "3%",
         borderRadius: "0.5rem",
-        "-webkit-filter": id === "1" ? "none" : "blur(5px)",
+        "-webkit-filter": id === "1" | id === "2" ? "none" : "blur(5px)",
       }}
     >
       <Grid2 item >
@@ -71,27 +71,22 @@ const EventCard = ({ id, name, date, location, ageRange }) => {
         </Grid2>
       </Grid2>
       <Button
-        disabled={id !== "1"}
+        disabled={id !== "2"}
         target="_blank"
         sx={{
           width: "50%",
           fontSize: "1rem",
           marginTop: "1rem",
-          "&:disabled": {
-            backgroundColor: theme.palette.tertiary.main,
-            color: theme.palette.primary.main,
-            border: `2px solid ${theme.palette.tertiary.main}`,
-          },
+        
         }}
         variant="outlined"
-        href={`https://eventfrog.ch/en/p/dating/singles-party/voii-dating-event-7279459950190856068.html`}
+        href={`https://eventfrog.ch/en/p/dating/singles-party/mix-mingle-play-a-new-kind-of-dating-night-7297612395718904926.html`}
       >
         Buy ticket
       </Button>
       <Grid2 item id="#expect" pt={{ xs: "25%", md: "8%" }}>
-        <Expect />
       </Grid2>
-      
+
     </Grid2>
   );
 };

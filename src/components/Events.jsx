@@ -12,10 +12,10 @@ const EventsInfo = [
   },
   {
     id: "2",
-    name: "Something @ place",
-    date: "Friday, Month D, Year | 7:00 PM",
-    location: "Someplace - Some Street Number 20",
-    ageRange: "23 to 39 years old",
+    name: "Mix, Mingle & Play: A New Kind of Dating Night",
+    date: "Friday, March 28, 2025 | 7:00 PM",
+    location: "Raum 84 - Langstrasse 84, 8004 Zurich",
+    ageRange: "20s and 30s",
   },
   {
     id: "3",
